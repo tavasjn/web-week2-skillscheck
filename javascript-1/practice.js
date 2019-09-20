@@ -193,8 +193,6 @@ let enemies = people.filter(function(element, index, array){
 
 // Using the people array above, let's get a total of the awesomeLevel from all the people. Call the new array 'totallyAwesome'. Use .reduce()
 
-let totallyAwesome = people.reduce(function(accum, element, index, array){
-	// return accum + element(index[awesomeLevel]);
-}, 0)
-console.log(totallyAwesome)
-console.log(people.element)
+let totallyAwesome = people.reduce((total, element) => {
+	return total += element.awesomeLevel;
+}, 0);
